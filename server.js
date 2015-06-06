@@ -4,26 +4,24 @@
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-var config = require('./config')
-  , express = require('express')
+var express = require('express')
   , app = express()
-  , resources = require('./resources')
-  , db = require('./db')()
+  // MIDDLEWARE
   , path = require('path')
   , bodyParser = require('body-parser')
-  , passport = require('passport')
   , flash = require('connect-flash')
   , session = require('express-session')
-  , passport = require('./passport')
-  // , cookieParser = require('cookie-parser')
-  // , cookie = require('cookie')
+  // ENVIRONMENT CONFIGURATION
+  , config = require('./config')
+  // DB CONFIGURATION
+  , db = require('./db')()
+  // ROUTING
+  , routes = require('./routes')
+  // INITIALIZE SERVER
   , server = app.listen(config.port)
-  , io = require('socket.io').listen(server);
 
-// app.use(express.static(__dirname + '/public'));
+// GRAB PUBLIC FOLDER WITH ANGULAR APP
 app.use("/", express.static(path.join(__dirname, 'public')));
-
-require('./sockets/base')(io);
 
 app.use(flash());
 app.use(session({
@@ -48,13 +46,13 @@ app.set('view options', {
 // app.use(passport.initialize());
 // app.use(passport.session());
 
-// RESOURCES
-app.get('/', resources.index);
-app.get('/templates/:name', resources.templates);
-require('./resources/posts')(app);
+// routes
+app.get('/', routes.index);
+app.get('/templates/:name', routes.templates);
+require('./routes/api')(app);
 
 // redirect all others to the index (HTML5 history)
-app.get('*', resources.index);
+app.get('*', routes.index);
 
 module.exports = server;
 console.log(process.env.NODE_ENV  + ' server running at http://localhost:' + config.port);
