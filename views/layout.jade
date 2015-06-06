@@ -4,12 +4,15 @@ html(lang="en", ng-app='myApp')
     meta(charset='utf8')
     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
     base(href='/')
-    title Question Queue
+    title MEAN Seed
     
-    //- Latest compiled and minified CSS
+    //- Latest compiled and minified CSS BOOTSTRAP AND IONICONS
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/css/style.css')
     link(rel='stylesheet', href='/vendor/ionicons/css/ionicons.css')
+
+    //- YOUR STYLES
+    link(rel='stylesheet', href='/css/style.css')
+    
 
   body(ng-controller="MainCtrl")
     block body
@@ -33,8 +36,6 @@ html(lang="en", ng-app='myApp')
   script(type="text/javascript", src='/controllers/mainCtrl.js')
   script(type="text/javascript", src='/controllers/postCtrls.js')
   script(type="text/javascript", src='/controllers/roomCtrls.js')
-  script(type="text/javascript", src='/filters.js')
-  script(type="text/javascript", src='/directives.js')
 
   script(src='/socket.io/socket.io.js')
   //- script.
