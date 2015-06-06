@@ -19,22 +19,21 @@
 
 ```
 |seed-mean
- | env
- | models
- | node_modules
- | public
- | routes
- | test
- | views
- - .bower.json
- - .bowerrc
- - .gitignore
- - bower.json
- - config.js
- - db.js
- - package.json
- - Prockfile
+ | env - sets enviornment variables (dev, test, or prd)
+ | models 
+ | node_modules - npm modules
+ | public - angular assets and angular app in here
+ | routes - routes and controller logic
+ | test - protractor tests
+ | views - all templates
+ - .bowerrc - bower config file
+ - .gitignore 
+ - bower.json - define bower package config
+ - config.js - set environment and other configuration variables 
+ - db.js - database configuration file
+ - package.json - npm package config
+ - Prockfile - necessary for heroku
  - README.md
- - server.js
+ - server.js 
 
 ```
