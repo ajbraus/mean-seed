@@ -9,24 +9,9 @@ var PostSchema = new Schema({
     created_at  : { type: Date }
   , updated_at  : { type: Date }
   , body        : { type: String, required: true, trim: true }
-  , votes_count : { type: Number, required: true, default: 0 }
-  , room_name   : { type: String, required: true, trim: true }
-  // , author: {}
 });
 
-// PostSchema.virtual('fullname').get(function() {
-//   return this.first + ' ' + this.last;
-// });
-
 // BEFORE/AFTER FILTER
-// PostSchema.pre('save', function(next) {
-// if (something) {
-// next()
-// } else {
-// next(new Error('No can do, sir!'));
-// }
-// });
-
 PostSchema.pre('save', function(next){
   // SET CREATED_AT AND UPDATED_AT
   now = new Date();
@@ -44,13 +29,5 @@ PostSchema.pre('save', function(next){
   next();
 });
 
-// SETTER
-// function obfuscate (cc) {
-//   return '****-****-****-' + cc.slice(cc.length-4, cc.length);
-// }
-
-// var AccountSchema = new Schema({
-//   creditCardNumber: { type: String, get: obfuscate }
-// });
-
+// EXPORT POST MODEL
 mongoose.model('Post', PostSchema);

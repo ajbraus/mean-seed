@@ -1,8 +1,40 @@
-QuestionQueue
-====================
+# MEAN-seed
 
-Imagine a speaker speaking in front of 200 people. Everyone can ask questions on QuestionQueue and vote on the questions they want answered. The speaker then can answer the highest voted questions.
+## What's in the Box?
 
-This is a MongoDB, Angular, Node, Express, Socket.io project.
+1. Node
+2. Angular
+3. Mongoose (MongoDB ODM)
+4. Jade (templating)
 
-![](http://www.nikola-breznjak.com/blog/wp-content/uploads/2014/11/allTheThingsInJustOneJsFile.jpg)
+## Getting Started
+
+1. ```$ git clone https://github.com/ajbraus/seed-mean.git seedMean```
+2. ```$ cd seedMean```
+3. ```$ npm install```
+4. ```$ nodemon```
+
+
+## File structure
+
+```
+|seed-mean
+ | env
+ | models
+ | node_modules
+ | public
+ | routes
+ | test
+ | views
+ - .bower.json
+ - .bowerrc
+ - .gitignore
+ - bower.json
+ - config.js
+ - db.js
+ - package.json
+ - Prockfile
+ - README.md
+ - server.js
+
+```
