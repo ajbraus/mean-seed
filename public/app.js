@@ -16,7 +16,7 @@ angular.module('myApp', ['ngResource',
     $routeProvider
       .when('/', {
         templateUrl: 'templates/todos-index'
-      , controller: 'RoomIndexCtrl'
+      , controller: 'TodosIndexCtrl'
       })
 
       .otherwise({

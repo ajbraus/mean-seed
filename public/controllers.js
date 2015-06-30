@@ -10,6 +10,6 @@ angular.module('myApp.controllers', [])
   })
 
   //POSTS
-  .controller('PostIndexCtrl', function ($scope) {
+  .controller('TodosIndexCtrl', function ($scope) {
     
   });
