@@ -9,7 +9,6 @@ var express = require('express')
   // INITIALIZE BASIC EXPRESS MIDDLEWARE
   , path = require('path')
   , bodyParser = require('body-parser')
-  , session = require('express-session')
   // ENVIRONMENT CONFIGURATION
   , config = require('./config')
   // DB CONFIGURATION
@@ -22,11 +21,6 @@ var express = require('express')
 // GRAB PUBLIC FOLDER WITH ANGULAR APP
 app.use("/", express.static(path.join(__dirname, 'public')));
 
-app.use(session({
-  saveUninitialized: true,
-  resave: true,
-  secret: 'OurSuperSecretCookieSecret'
-}));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
